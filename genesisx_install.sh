@@ -30,7 +30,7 @@ purgeOldInstallation() {
     #remove old ufw port allow
     sudo ufw delete allow $COIN_PORT/tcp > /dev/null 2>&1
     #remove old files
-	rm rm -- "$0" > /dev/null 2>&1
+	rm  -- "$0" > /dev/null 2>&1
 	rm /root/$CONFIGFOLDER/bootstrap.dat.old > /dev/null 2>&1
 	cd /usr/local/bin && sudo rm $COIN_CLI $COIN_DAEMON > /dev/null 2>&1 && cd
     cd /usr/bin && sudo rm $COIN_CLI $COIN_DAEMON > /dev/null 2>&1 && cd
@@ -46,7 +46,7 @@ function download_node() {
   wget -q $COIN_TGZ
   compile_error
   unzip $COIN_ZIP
-  cd Linux16.04\
+  cd Linux16.04/
   chmod +x $COIN_DAEMON $COIN_CLI
   cp $COIN_DAEMON $COIN_CLI $COIN_PATH
   cd ~ >/dev/null 2>&1
@@ -263,7 +263,7 @@ function important_information() {
  echo -e "${BLUE}================================================================================================================================${NC}"
  echo -e "${GREEN}Usage Commands.${NC}"
  echo -e "${GREEN}genesisx-cli masternode status${NC}"
- echo -e "${GREEN}genesisx-cli getinfo.${NC}"
+ echo -e "${GREEN}genesisx-cli getinfo${NC}"
  echo -e "${BLUE}================================================================================================================================${NC}"
  echo -e "${RED}Donations always accepted gratefully.${NC}"
  echo -e "${BLUE}================================================================================================================================${NC}"
